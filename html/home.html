@@ -1,0 +1,51 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JumpStart</title>
+        <link rel="stylesheet" href="/assets/css/home.css">
+    <body>
+        <main>
+            <center style="height: 100%; flex-direction: column;">
+                <img id="icon" src="/assets/img/icon.svg" width="100" height="100" style="transform: translateY(60px); opacity: 0; transition: 400ms ease-out" alt="JumpStartLogo">
+                <loading id="load" style="position: absolute; bottom: calc(50% - 110px); opacity: 0"></loading>
+                <h2 style="margin: 10px 0px; transform: translateY(10px); opacity: 0; transition: 200ms ease-out">Welcome to JumpStart.</h2>
+                <p style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out">All your tools for Geometry Dash, all in one spot.</p>
+                <p style="font-size: 70%; transform: translateY(10px); opacity: 0; transition: 200ms ease-out" class="muted">Interested? <a href="https:/github.com/GD-JumpStart">Learn more</a>.</p>
+            </center>
+        </main>
+    </body>
+        
+    <script>
+        const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
+        
+        window.addEventListener('load', async () => {
+            await wait(500)
+            document.getElementById('icon').style.transform = 'translateY(50px)'
+            document.getElementById('icon').style.opacity = '1'
+            await wait(300)
+
+            await new Promise(async resolve => {
+                document.getElementById('load').style.opacity = '1'
+                await wait(300)
+                document.getElementById('load').style.opacity = '0'
+                await wait(300)
+                resolve()
+            })
+
+            document.getElementById('icon').style.transform = 'translateY(-10px) rotate(15deg)';
+
+            await wait(500)
+            document.querySelectorAll('center h2, center p')[0].style.transform = 'translateY(0px)'
+            document.querySelectorAll('center h2, center p')[0].style.opacity = '1'
+            await wait(100)
+            document.querySelectorAll('center h2, center p')[1].style.transform = 'translateY(0px)'
+            document.querySelectorAll('center h2, center p')[1].style.opacity = '1'
+            await wait(100)
+            document.querySelectorAll('center h2, center p')[2].style.transform = 'translateY(0px)'
+            document.querySelectorAll('center h2, center p')[2].style.opacity = '1'
+        })
+    </script>
+        
+</html>
