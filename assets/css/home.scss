@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'bootstrap-icons';
-    src: url('../assets/bootstrap-icons.woff2') format('woff2'),
-        url('../assets/bootstrap-icons.woff') format('woff');
+    src: url('/assets/fonts/bootstrap-icons.woff2') format('woff2'),
+        url('/assets/fonts/bootstrap-icons.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'bootstrap-icons';
-    src: url('../assets/bootstrap-icons.woff2') format('woff2'),
-        url('../assets/bootstrap-icons.woff') format('woff');
+    src: url('/assets/fonts/bootstrap-icons.woff2') format('woff2'),
+        url('/assets/fonts/bootstrap-icons.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -29,120 +29,12 @@ body {
     height: 100vh
 }
 
-nav {
-    height: 30px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    -webkit-app-region: drag;
-
-    span {
-        display: flex;
-        align-items: center;
-        padding: 0px 10px;
-        z-index: 10;
-    }
-
-    #controls {
-        padding: 0px;
-
-        div {
-            z-index: 1;
-            background: #0000;
-            color: #fff8;
-            width: 50px;
-            height: 30px;
-            border: none;
-            -webkit-app-region: no-drag;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:hover {
-                background: #fff1;
-                color: #fff9;
-            }
-            
-            &:active {
-                background: #fff2;
-                color: #fffa;
-            }
-
-            &#close {
-                transition: 100ms;
-
-                &:hover {
-                    background: #f33;
-                    transition: 100ms;
-                    color: #fff;
-                }
-
-                &:active {
-                    background: #f33;
-                    color: #fff;
-                }
-            }
-        }
-    }
-}
-
-aside {
-    padding: 0px;
-    height: calc(100vh - 44px);
-    min-width: 0px;
-    max-width: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    span {
-        width: 100%;
-
-        a {
-            color: #fff;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            padding: 7px;
-            font-size: 18px;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: 200ms ease-out;
-    
-            &:hover {
-                text-decoration: none;
-                background: #343a40
-            }
-    
-            span {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 24px;
-                margin-right: 7px;
-                width: 24px;
-                height: 24px;
-                margin-bottom: 0px;
-                transform: translateY(2px);
-            }
-        }
-    }
-}
-
 main {
-    border-top-left-radius: 0px;
     overflow-y: auto;
     overflow-x: hidden;
-    height: calc(100vh - 33px);
+    height: 100vh;
     width: 100vw;
     background: #121313;
-    border-top: 3px solid #121313;
     scroll-behavior: smooth;
     
     center {
