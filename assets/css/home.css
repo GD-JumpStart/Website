@@ -1,13 +1,13 @@
 @font-face {
   font-family: "bootstrap-icons";
-  src: url("../assets/bootstrap-icons.woff2") format("woff2"), url("../assets/bootstrap-icons.woff") format("woff");
+  src: url("/assets/fonts/bootstrap-icons.woff2") format("woff2"), url("/assets/fonts/bootstrap-icons.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "bootstrap-icons";
-  src: url("../assets/bootstrap-icons.woff2") format("woff2"), url("../assets/bootstrap-icons.woff") format("woff");
+  src: url("/assets/fonts/bootstrap-icons.woff2") format("woff2"), url("/assets/fonts/bootstrap-icons.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -25,108 +25,12 @@ body {
   height: 100vh;
 }
 
-nav {
-  height: 30px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  -webkit-app-region: drag;
-}
-nav span {
-  display: flex;
-  align-items: center;
-  padding: 0px 10px;
-  z-index: 10;
-}
-nav #controls {
-  padding: 0px;
-}
-nav #controls div {
-  z-index: 1;
-  background: rgba(0, 0, 0, 0);
-  color: rgba(255, 255, 255, 0.5333333333);
-  width: 50px;
-  height: 30px;
-  border: none;
-  -webkit-app-region: no-drag;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-nav #controls div:hover {
-  background: rgba(255, 255, 255, 0.0666666667);
-  color: rgba(255, 255, 255, 0.6);
-}
-nav #controls div:active {
-  background: rgba(255, 255, 255, 0.1333333333);
-  color: rgba(255, 255, 255, 0.6666666667);
-}
-nav #controls div#close {
-  transition: 100ms;
-}
-nav #controls div#close:hover {
-  background: #f33;
-  transition: 100ms;
-  color: #fff;
-}
-nav #controls div#close:active {
-  background: #f33;
-  color: #fff;
-}
-
-aside {
-  padding: 0px;
-  height: calc(100vh - 44px);
-  min-width: 0px;
-  max-width: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-aside span {
-  width: 100%;
-}
-aside span a {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 7px;
-  font-size: 18px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: 200ms ease-out;
-}
-aside span a:hover {
-  text-decoration: none;
-  background: #343a40;
-}
-aside span a span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  margin-right: 7px;
-  width: 24px;
-  height: 24px;
-  margin-bottom: 0px;
-  transform: translateY(2px);
-}
-
 main {
-  border-top-left-radius: 0px;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100vh - 33px);
+  height: 100vh;
   width: 100vw;
   background: #121313;
-  border-top: 3px solid #121313;
   scroll-behavior: smooth;
 }
 main center {
@@ -141,7 +45,13 @@ main * {
   transition: opacity 200ms ease-in-out;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0px;
 }
 
@@ -159,8 +69,18 @@ loading {
   border: 3px solid #212529;
   border-top: 3px solid #343a40;
   border-radius: 50%;
-  animation: 2s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) spinner;
+  -webkit-animation: 2s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) spinner;
+          animation: 2s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) spinner;
   transition: opacity 200ms ease-in-out;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spinner {
@@ -287,7 +207,8 @@ context button:hover#del {
   background: #dc3545;
 }
 
-button.style, label.button {
+button.style,
+label.button {
   border: 1px solid #495057;
   border-radius: 8px;
   background: #343a40;
@@ -298,24 +219,28 @@ button.style, label.button {
   font-size: 13px;
   min-width: 60px;
 }
-button.style.blue, label.button.blue {
+button.style.blue,
+label.button.blue {
   background: #0d6efd;
 }
-button.style.red, label.button.red {
+button.style.red,
+label.button.red {
   background: #dc3545;
 }
-button.style.disabled, label.button.disabled {
+button.style.disabled,
+label.button.disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-button.style:hover:not(.disabled), label.button:hover:not(.disabled) {
+button.style:hover:not(.disabled),
+label.button:hover:not(.disabled) {
   background: #495057;
 }
-button.style:hover:not(.disabled).blue, label.button:hover:not(.disabled).blue {
+button.style:hover:not(.disabled).blue,
+label.button:hover:not(.disabled).blue {
   background: #024dbc;
 }
-button.style:hover:not(.disabled).red, label.button:hover:not(.disabled).red {
+button.style:hover:not(.disabled).red,
+label.button:hover:not(.disabled).red {
   background: #bd2130;
-}
-
-/*# sourceMappingURL=home.css.map */
+}/*# sourceMappingURL=index.css.map */
