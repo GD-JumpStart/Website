@@ -43,10 +43,10 @@
                             'User-Agent': navigator.userAgent
                         }
                     }).then(res => { return res.json() }).then(res => {
-                         let suffix = navigator.appVersion.toLowerCase().indexOf('mac') != -1 ? '-mac' : '-win' 
+                         let suffix = navigator.appVersion.toLowerCase().indexOf('mac') != -1 ? 'mac' : 'win'
                         for (let i = 0; i < res.length; i++) {
-                            console.log(res[i].tag_name.toLowerCase(), res[i].tag_name.toLowerCase().endsWith(suffix))
-                            if (res[i].tag_name.toLowerCase().endsWith(suffix)) {
+                            console.log(res[i].tag_name.toLowerCase(), res[i].tag_name.toLowerCase().endsWith(`-${suffix}`))
+                            if (res[i].tag_name.toLowerCase().endsWith(`-${suffix}`)) {
                                 document.querySelectorAll('center div button')[0].onclick = () => location.href = `https://github.com/GD-JumpStart/Application/releases/download/${res[i].tag_name}/${suffix == 'mac' ? 'JumpStart.zip' : 'JumpStart_Setup.exe'}`
                                 break
                             }
