@@ -1,20 +1,22 @@
-@font-face {
-    font-family: 'bootstrap-icons';
-    src: url('/assets/fonts/bootstrap-icons.woff2') format('woff2'),
-        url('/assets/fonts/bootstrap-icons.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'bootstrap-icons';
+//     src: url('/assets/fonts/bootstrap-icons.woff2') format('woff2'),
+//         url('/assets/fonts/bootstrap-icons.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
 
-@font-face {
-    font-family: 'bootstrap-icons';
-    src: url('/assets/fonts/bootstrap-icons.woff2') format('woff2'),
-        url('/assets/fonts/bootstrap-icons.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+// @font-face {
+//     font-family: 'bootstrap-icons';
+//     src: url('/assets/fonts/bootstrap-icons.woff2') format('woff2'),
+//         url('/assets/fonts/bootstrap-icons.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'bootstrap-icons';
@@ -244,5 +246,37 @@ button.style, label.button {
         &.red {
             background: #bd2130;
         }
+    }
+}
+
+.popup {
+
+    .content {
+        padding: 3px;
+        border-radius: 3px;
+        background: #212529;
+        border: 1px solid #343a40;
+        position: absolute;
+        transform: translateY(-3.1em);
+        opacity: 0;
+        transition: 100ms ease-out;
+    }
+
+    &:hover .content {
+        opacity: 1;
+        transform: translateY(-3.3em);
+    }
+}
+
+#actions {
+    margin: 10px;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+
+    button {
+        width: 200px;
+        margin: 0px 5px;
+
     }
 }

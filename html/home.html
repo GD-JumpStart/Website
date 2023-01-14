@@ -14,10 +14,10 @@
         <main>
             <center style="height: 100%; flex-direction: column;">
                 <img id="icon" src="/assets/img/icon.svg" width="100" height="100" style="transform: translateY(60px); opacity: 0; transition: 400ms ease-out" alt="JumpStartLogo">
-                <loading id="load" style="position: absolute; bottom: calc(50% - 110px); opacity: 0"></loading>
+                <loading id="load" style="position: absolute; bottom: calc(50% - 70px); opacity: 0"></loading>
                 <h2 style="margin: 10px 0px; transform: translateY(10px); opacity: 0; transition: 200ms ease-out">Welcome to JumpStart.</h2>
                 <p style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out">All your tools for Geometry Dash, all in one spot.</p>
-                <p style="font-size: 70%; transform: translateY(10px); opacity: 0; transition: 200ms ease-out" class="muted">Interested? <a href="https://github.com/GD-JumpStart">Learn more</a>.</p>
+                <div style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out" id="actions"><button class="style" onclick="location.href = 'https:\/\/github.com/GD-JumpStart/Application/releases/'">Download</button><button class="style" onclick="location.href = 'https:\/\/github.com/GD-JumpStart/'">Learn More</button></p>
             </center>
         </main>
     </body>
@@ -34,6 +34,26 @@
             await new Promise(async resolve => {
                 document.getElementById('load').style.opacity = '1'
                 await wait(300)
+                if (navigator.appVersion.toLowerCase().indexOf('mac') != -1) document.querySelectorAll('center div button')[0].innerText = 'Download for MacOS'
+                else if (navigator.appVersion.toLowerCase().indexOf('win') != -1) document.querySelectorAll('center div button')[0].innerText = 'Download for Windows'
+                else document.querySelectorAll('center div button')[0].innerHTML = 'Download for Windows <span class="popup"><i class="bi bi-exclamation-circle"></i><p class="content">OS not currently supported</p></span>'
+                await new Promise(resolve => {
+                    fetch('https://api.github.com/repos/GD-JumpStart/Application/releases', {
+                        headers: {
+                            'User-Agent': navigator.userAgent
+                        }
+                    }).then(res => { return res.json() }).then(res => {
+                         let suffix = navigator.appVersion.toLowerCase().indexOf('mac') != -1 ? '-mac' : '-win' 
+                        for (let i = 0; i < res.length; i++) {
+                            console.log(res[i].tag_name.toLowerCase(), res[i].tag_name.toLowerCase().endsWith(suffix))
+                            if (res[i].tag_name.toLowerCase().endsWith(suffix)) {
+                                document.querySelectorAll('center div button')[0].onclick = () => location.href = `https://github.com/GD-JumpStart/Application/releases/download/${res[i].tag_name}/${suffix == 'mac' ? 'JumpStart.zip' : 'JumpStart_Setup.exe'}`
+                                break
+                            }
+                        }
+                        resolve()
+                    })
+                })
                 document.getElementById('load').style.opacity = '0'
                 await wait(300)
                 resolve()
@@ -42,14 +62,14 @@
             document.getElementById('icon').style.transform = 'translateY(-10px) rotate(15deg)';
 
             await wait(500)
-            document.querySelectorAll('center h2, center p')[0].style.transform = 'translateY(0px)'
-            document.querySelectorAll('center h2, center p')[0].style.opacity = '1'
+            document.querySelector('center h2').style.transform = 'translateY(0px)'
+            document.querySelector('center h2').style.opacity = '1'
             await wait(100)
-            document.querySelectorAll('center h2, center p')[1].style.transform = 'translateY(0px)'
-            document.querySelectorAll('center h2, center p')[1].style.opacity = '1'
+            document.querySelector('center p').style.transform = 'translateY(0px)'
+            document.querySelector('center p').style.opacity = '1'
             await wait(100)
-            document.querySelectorAll('center h2, center p')[2].style.transform = 'translateY(0px)'
-            document.querySelectorAll('center h2, center p')[2].style.opacity = '1'
+            document.querySelector('center div').style.transform = 'translateY(0px)'
+            document.querySelector('center div').style.opacity = '1'
         })
     </script>
         

@@ -1,17 +1,4 @@
-@font-face {
-  font-family: "bootstrap-icons";
-  src: url("/assets/fonts/bootstrap-icons.woff2") format("woff2"), url("/assets/fonts/bootstrap-icons.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "bootstrap-icons";
-  src: url("/assets/fonts/bootstrap-icons.woff2") format("woff2"), url("/assets/fonts/bootstrap-icons.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "bootstrap-icons";
   margin: 0px;
@@ -45,13 +32,7 @@ main * {
   transition: opacity 200ms ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1, h2, h3, h4, h5, h6, p {
   margin: 0px;
 }
 
@@ -207,8 +188,7 @@ context button:hover#del {
   background: #dc3545;
 }
 
-button.style,
-label.button {
+button.style, label.button {
   border: 1px solid #495057;
   border-radius: 8px;
   background: #343a40;
@@ -219,28 +199,48 @@ label.button {
   font-size: 13px;
   min-width: 60px;
 }
-button.style.blue,
-label.button.blue {
+button.style.blue, label.button.blue {
   background: #0d6efd;
 }
-button.style.red,
-label.button.red {
+button.style.red, label.button.red {
   background: #dc3545;
 }
-button.style.disabled,
-label.button.disabled {
+button.style.disabled, label.button.disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-button.style:hover:not(.disabled),
-label.button:hover:not(.disabled) {
+button.style:hover:not(.disabled), label.button:hover:not(.disabled) {
   background: #495057;
 }
-button.style:hover:not(.disabled).blue,
-label.button:hover:not(.disabled).blue {
+button.style:hover:not(.disabled).blue, label.button:hover:not(.disabled).blue {
   background: #024dbc;
 }
-button.style:hover:not(.disabled).red,
-label.button:hover:not(.disabled).red {
+button.style:hover:not(.disabled).red, label.button:hover:not(.disabled).red {
   background: #bd2130;
-}/*# sourceMappingURL=index.css.map */
+}
+
+.popup .content {
+  padding: 3px;
+  border-radius: 3px;
+  background: #212529;
+  border: 1px solid #343a40;
+  position: absolute;
+  transform: translateY(-3.1em);
+  opacity: 0;
+  transition: 100ms ease-out;
+}
+.popup:hover .content {
+  opacity: 1;
+  transform: translateY(-3.3em);
+}
+
+#actions {
+  margin: 10px;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+#actions button {
+  width: 200px;
+  margin: 0px 5px;
+}/*# sourceMappingURL=home.css.map */
