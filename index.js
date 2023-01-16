@@ -3,9 +3,9 @@ const express = require('express')
 const app = express()
 const port = 357
 
-app.get('/', (req, res) => {
-    res.status(200).sendFile(__dirname + '/html/home.html');
-})
+app.get('/', (req, res) => res.status(200).sendFile(__dirname + '/html/home.html'))
+app.get('/login', (req, res) => res.status(200).sendFile(__dirname + '/html/login.html'))
+
 
 app.use('/assets', express.static(__dirname + '/assets/'))
 
@@ -17,4 +17,4 @@ app.listen(port, () => {
     console.log(`App listening on port ${port}`)
 })
 
-module.exports = app;
+module.exports = app
