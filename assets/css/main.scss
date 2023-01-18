@@ -103,6 +103,26 @@ loading {
     }
 }
 
+nav {
+    position: fixed;
+    display: flex;
+    top: 8px;
+    left: 8px;
+    font-size: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    background: #121313;
+    border-radius: 15px;
+    z-index: 1;
+
+    a {
+        color: #fff;
+        margin: 0px 5px;
+        padding: 5px;
+    }
+}
+
 *:not(code, pre) {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
@@ -187,6 +207,9 @@ button.style, label.button {
     padding: 7px 13px;
     font-size: 13px;
     min-width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &.blue {
         background: #0d6efd;
@@ -216,4 +239,8 @@ button.style, label.button {
 
 .muted {
     color: #6c757d;
+}
+
+i.align {
+    transform: translateY(0.08em);
 }

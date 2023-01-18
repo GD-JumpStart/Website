@@ -14,25 +14,6 @@ main * {
   transition: opacity 200ms ease-in-out;
 }
 
-nav {
-  position: fixed;
-  display: flex;
-  top: 8px;
-  left: 8px;
-  font-size: x-small;
-  justify-content: center;
-  align-items: center;
-  padding: 7px;
-  background: #121313;
-  border-radius: 15px;
-  z-index: 1;
-}
-nav a {
-  color: #fff;
-  margin: 0px 5px;
-  padding: 5px;
-}
-
 .popup .content {
   padding: 3px;
   border-radius: 3px;

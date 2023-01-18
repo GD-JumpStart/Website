@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JumpStart</title>
+    <title>Log In - JumpStart</title>
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/login.css">
 
@@ -16,43 +16,42 @@
     <!-- Manifest Data Generated via https://favicon.io/ -->
 
     <!-- HTML Meta Tags -->
-    <title>JumpStart</title>
+    <title>Log In - JumpStart</title>
     <meta name="description" content="All your tools for Geometry Dash, all in one spot.">
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://gdjumpstart.org">
+    <meta property="og:url" content="https://gdjumpstart.org/login">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="JumpStart">
+    <meta property="og:title" content="Log In - JumpStart">
     <meta property="og:description" content="All your tools for Geometry Dash, all in one spot.">
     <meta property="og:image" content="/assets/img/opengraph.png">
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:domain" content="gdjumpstart.org">
-    <meta property="twitter:url" content="https://gdjumpstart.org">
-    <meta name="twitter:title" content="JumpStart">
+    <meta property="twitter:url" content="https://gdjumpstart.org/login">
+    <meta name="twitter:title" content="Log In - JumpStart">
     <meta name="twitter:description" content="All your tools for Geometry Dash, all in one spot.">
     <meta name="twitter:image" content="/assets/img/opengraph.png">
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+</head>
 
 <body>
-    <nav style="transform: translateX(-10px); opacity: 0; transition: 200ms ease-out"><a href="/premium">Jump+</a>•<a
-            href="/store">Store</a>•<a href="/login">Log In</a>•<a href="/login">Sign Up</a></nav>
+    <nav style="transform: translateX(-10px); opacity: 0; transition: 200ms ease-out"><a href="/"><i class="bi bi-arrow-left-short"></i> Back</a></nav>
     <main>
         <center style="height: 100%; flex-direction: column;">
-            <img id="icon" src="/assets/img/icon.svg" width="100" height="100"
-                style="transform: translateY(60px); opacity: 0; transition: 400ms ease-out" alt="JumpStartLogo">
-            <loading id="load" style="position: absolute; bottom: calc(50% - 70px); opacity: 0"></loading>
-            <h2 style="margin: 10px 0px; transform: translateY(10px); opacity: 0; transition: 200ms ease-out">Welcome to
-                JumpStart.</h2>
-            <p style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out">All your tools for Geometry
-                Dash, all in one spot.</p>
-            <div style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out" id="actions"><button
-                    class="style"
-                    onclick="location.href = 'https:\/\/github.com/GD-JumpStart/Application/releases/'">Download</button><button
-                    class="style" onclick="location.href = 'https:\/\/github.com/GD-JumpStart/'">Learn More</button></p>
+            <loading id="load" style="position: absolute; opacity: 0"></loading>
+            <div id="login" style="opacity: 0; display: none; transform: translateY(10px); transition: 200ms ease-out">
+                <h1>Log In</h1>
+                <button class="style" onclick="location.href = 'https:\/\/discord.com/api/oauth2/authorize?client_id=1064678297327382588&redirect_uri=http%3A%2F%2Flocalhost%3A357%2Flogin&response_type=code&scope=identify'"><i class="align bi bi-discord"></i> Log In with Discord</button>
+            </div>
         </center>
     </main>
 </body>
+
+<script src="/assets/js/dependencies/js.cookie.min.js"></script>
+
+<script src="/assets/js/login.js"></script>
+
 </html>

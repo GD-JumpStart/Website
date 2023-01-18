@@ -1,0 +1,34 @@
+main {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    scroll-behavior: smooth;
+    
+    center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    * {
+        transition: opacity 200ms ease-in-out;
+    }
+}
+
+#login {
+    background-color: #212529;
+    padding: 20px;
+    border-radius: 15px;
+    border: solid 1px #343a40;
+
+    button {
+        margin: 15px 30px;
+        margin-bottom: 0px;
+
+        i {
+            font-size: 17px;
+            margin-right: 4px;
+        }
+    }
+}

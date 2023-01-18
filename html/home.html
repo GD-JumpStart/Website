@@ -1,135 +1,79 @@
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JumpStart</title>
-        <link rel="stylesheet" href="/assets/css/main.css">
-        <link rel="stylesheet" href="/assets/css/home.css">
-		
-		<link rel="apple-touch-icon" sizes="180x180" href="/assets/manifest/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/assets/manifest/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/assets/manifest/favicon-16x16.png">
-		<link rel="manifest" href="/assets/manifest/site.webmanifest">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JumpStart</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/manifest/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/manifest/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/manifest/favicon-16x16.png">
+    <link rel="manifest" href="/assets/manifest/site.webmanifest">
 
-        <!-- Manifest Data Generated via https://favicon.io/ -->
+    <!-- Manifest Data Generated via https://favicon.io/ -->
 
-        <!-- HTML Meta Tags -->
-        <title>JumpStart</title>
-        <meta name="description" content="All your tools for Geometry Dash, all in one spot.">
-        
-        <!-- Facebook Meta Tags -->
-        <meta property="og:url" content="https://gdjumpstart.org">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="JumpStart">
-        <meta property="og:description" content="All your tools for Geometry Dash, all in one spot.">
-        <meta property="og:image" content="/assets/img/opengraph.png">
-        
-        <!-- Twitter Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta property="twitter:domain" content="gdjumpstart.org">
-        <meta property="twitter:url" content="https://gdjumpstart.org">
-        <meta name="twitter:title" content="JumpStart">
-        <meta name="twitter:description" content="All your tools for Geometry Dash, all in one spot.">
-        <meta name="twitter:image" content="/assets/img/opengraph.png">
-        
-        <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-    </head>
-    <body>
-        <nav style="transform: translateX(-5px); opacity: 0; transition: 100ms ease-out"><a href="/premium" class="premium">Jump+</a>•<a href="/store">Store</a>•<a href="/login">Log In</a>•<a href="/login">Sign Up</a></nav>
-        <main>
-            <center style="height: 100%; flex-direction: column;">
-                <img id="icon" src="/assets/img/icon.svg" width="100" height="100" style="transform: translateY(60px); opacity: 0; transition: 400ms ease-out" alt="JumpStartLogo">
-                <loading id="load" style="position: absolute; bottom: calc(50% - 70px); opacity: 0"></loading>
-                <h2 style="margin: 10px 0px; transform: translateY(10px); opacity: 0; transition: 200ms ease-out">Welcome to JumpStart.</h2>
-                <p style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out">All your tools for Geometry Dash, all in one spot.</p>
-                <div style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out" id="actions"><button class="style" onclick="location.href = 'https:\/\/github.com/GD-JumpStart/Application/releases/'">Download</button><button class="style" onclick="location.href = 'https:\/\/github.com/GD-JumpStart/'">Learn More</button></p>
-            </center>
-        </main>
-        <div id="content" style="display: none">
-            <span>
-                <div>
-                    <h1>Easy Mod Managing</h1>
-                    <p>Manage and Install multiple mods without opening a single File Explorer window. Lets you download mods for the game and megahack with a single click, and always makes sure your mods are up to date.</p>
-                </div>
-                <img src="/assets/img/home-1.png">
-            </span>
-            <span>
-                <img src="/assets/img/home-2.png">
-                <div>
-                    <h1>Conventient Texture Pack System</h1>
-                    <p>Install, view, and change Texture Packs with ease. No more managing endless .zip files, replacing textures, and Verifying Integrity of Game Files every time your textures break.</p>
-                </div>
-            </span>
-            <span>
-                <div>
-                    <h1>Secure File Backups</h1>
-                    <p>Backup your Save Files and make sure you Never lose your data. No more pesky long wait-times and data loss, and no file size limit when saving.<font class="disclaimer main">*</font></p>
-                    <br>
-                    <font class="disclaimer">*Base Users have a maximum of 25MB of storage, while <a href="/premium" class="premium">Jump+</a> Users have unlimited storage.</font>
-                </div>
-                <img src="/assets/img/home-3.png">
-            </span>
-        </div>
-    </body>
-        
-    <script>
-        const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
-        
-        window.addEventListener('load', async () => {
-            await wait(500)
-            document.getElementById('icon').style.transform = 'translateY(50px)'
-            document.getElementById('icon').style.opacity = '1'
-            await wait(300)
+    <!-- HTML Meta Tags -->
+    <title>JumpStart</title>
+    <meta name="description" content="All your tools for Geometry Dash, all in one spot.">
+    
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://gdjumpstart.org">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JumpStart">
+    <meta property="og:description" content="All your tools for Geometry Dash, all in one spot.">
+    <meta property="og:image" content="/assets/img/opengraph.png">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="gdjumpstart.org">
+    <meta property="twitter:url" content="https://gdjumpstart.org">
+    <meta name="twitter:title" content="JumpStart">
+    <meta name="twitter:description" content="All your tools for Geometry Dash, all in one spot.">
+    <meta name="twitter:image" content="/assets/img/opengraph.png">
+    
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+</head>
 
-            await new Promise(async resolve => {
-                document.getElementById('load').style.opacity = '1'
-                await wait(300)
-                if (navigator.appVersion.toLowerCase().indexOf('mac') != -1) document.querySelectorAll('center div button')[0].innerText = 'Download for MacOS'
-                else if (navigator.appVersion.toLowerCase().indexOf('win') != -1) document.querySelectorAll('center div button')[0].innerText = 'Download for Windows'
-                else document.querySelectorAll('center div button')[0].innerHTML = 'Download for Windows <span class="popup"><i class="bi bi-exclamation-circle"></i><p class="content">OS not currently supported</p></span>'
-                await new Promise(resolve => {
-                    fetch('https://api.github.com/repos/GD-JumpStart/Application/releases', {
-                        headers: {
-                            'User-Agent': navigator.userAgent
-                        }
-                    }).then(res => { return res.json() }).then(res => {
-                         let suffix = navigator.appVersion.toLowerCase().indexOf('mac') != -1 ? 'mac' : 'win'
-                        for (let i = 0; i < res.length; i++) {
-                            if (res[i].tag_name.toLowerCase().endsWith(`-${suffix}`)) {
-                                document.querySelectorAll('center div button')[0].onclick = () => location.href = `https://github.com/GD-JumpStart/Application/releases/download/${res[i].tag_name}/${suffix == 'mac' ? 'JumpStart.zip' : 'JumpStart_Setup.exe'}`
-                                break
-                            }
-                        }
-                        resolve()
-                    })
-                })
-                document.onscroll = () => {
-                    if (document.body.scrollTop > window.innerHeight - 50) document.querySelector('nav').style.boxShadow = '3px 3px 15px 3px #0005'
-                    else document.querySelector('nav').style.boxShadow = ''
-                }
-                document.getElementById('load').style.opacity = '0'
-                await wait(300)
-                resolve()
-            })
-
-            document.getElementById('icon').style.transform = 'translateY(-10px) rotate(15deg)';
-
-            await wait(500)
-            document.querySelector('#content').style.display = ''
-
-            document.querySelector('center h2').style.transform = 'translateY(0px)'
-            document.querySelector('center h2').style.opacity = '1'
-            await wait(100)
-            document.querySelector('center p').style.transform = 'translateY(0px)'
-            document.querySelector('center p').style.opacity = '1'
-            await wait(100)
-            document.querySelector('center div').style.transform = 'translateY(0px)'
-            document.querySelector('center div').style.opacity = '1'
-            await wait(100)
-            document.querySelector('nav').style.transform = 'translateX(0px)'
-            document.querySelector('nav').style.opacity = '1'
-        })
-    </script>
-        
+<body>
+    <nav style="transform: translateX(-5px); opacity: 0; display: none; transition: 100ms ease-out"><a href="/premium" class="premium">Jump+</a>•<a href="/store">Store</a>•<a href="/login">Log In</a></nav>
+    <main>
+        <center style="height: 100%; flex-direction: column;">
+            <img id="icon" src="/assets/img/icon.svg" width="100" height="100" style="transform: translateY(60px); opacity: 0; transition: 400ms ease-out" alt="JumpStartLogo">
+            <loading id="load" style="position: absolute; bottom: calc(50% - 70px); opacity: 0"></loading>
+            <h2 style="margin: 10px 0px; transform: translateY(10px); opacity: 0; transition: 200ms ease-out">Welcome to JumpStart.</h2>
+            <p style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out">All your tools for Geometry Dash, all in one spot.</p>
+            <div style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out" id="actions"><button class="style">Download</button><button class="style">Learn More</button></p>
+        </center>
+    </main>
+    <div id="content" style="display: none">
+        <span>
+            <div>
+                <h1>Easy Mod Managing</h1>
+                <p>Manage and Install multiple mods without opening a single File Explorer window. Lets you download mods for the game and megahack with a single click, and always makes sure your mods are up to date.</p>
+            </div>
+            <img src="/assets/img/home-1.png">
+        </span>
+        <span>
+            <img src="/assets/img/home-2.png">
+            <div>
+                <h1>Conventient Texture Pack System</h1>
+                <p>Install, view, and change Texture Packs with ease. No more managing endless .zip files, replacing textures, and Verifying Integrity of Game Files every time your textures break.</p>
+            </div>
+        </span>
+        <span>
+            <div>
+                <h1>Secure File Backups</h1>
+                <p>Backup your Save Files and make sure you Never lose your data. No more pesky long wait-times and data loss, and no file size limit when saving.<font class="disclaimer main">*</font></p>
+                <br>
+                <font class="disclaimer">*Base Users have a maximum of 25MB of storage, while <a href="/premium" class="premium">Jump+</a> Users have unlimited storage.</font>
+            </div>
+            <img src="/assets/img/home-3.png">
+        </span>
+    </div>
+</body>
+    
+<script src="/assets/js/home.js"></script>
+    
 </html>
