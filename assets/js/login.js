@@ -1,5 +1,5 @@
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms))
-const cookies = Cookies.withAttributes({ path: '', expires: 90, sameSite: 'lax' })
+const cookies = Cookies.withAttributes({ path: '', expires: 400, sameSite: 'lax' })
 const query = new URLSearchParams(location.search)
 JSON.searchify = (obj) => {
     let USP = new URLSearchParams
@@ -43,6 +43,7 @@ window.addEventListener('load', async () => {
             }).then(res => { return res.json() }).then(res => {
                 if (res.error) return resolve()
                 cookies.set('id', res.id, { expires: new Date(res.expires) })
+                cookies.set('auth', res.auth)
                 location.href = '../'
             })
         })
