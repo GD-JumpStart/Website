@@ -19,15 +19,15 @@ window.addEventListener('load', async () => {
         }
         await new Promise(async resolve => {
             await new Promise(async resolve => {
-                if (cookies.get('id')) {
+                if (cookies.get('uid')) {
                     fetch('https://storage.kontroll.dev/jumpstart/auth', {
                         method: 'POST',
                         headers: {
-                            'ID': cookies.get('id')
+                            'ID': cookies.get('uid')
                         }
                     }).then(res => { return res.json() }).then(res => {
                         if (!res.error) return location.href = '../'
-                        cookies.remove('id')
+                        cookies.remove('uid')
                         resolve()
                     })
                 } else resolve()
@@ -42,7 +42,7 @@ window.addEventListener('load', async () => {
                 }
             }).then(res => { return res.json() }).then(res => {
                 if (res.error) return resolve()
-                cookies.set('id', res.id, { expires: new Date(res.expires) })
+                cookies.set('uid', res.id, { expires: new Date(res.expires) })
                 cookies.set('auth', res.auth)
                 location.href = '../'
             })
