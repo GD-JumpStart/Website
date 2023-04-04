@@ -1,8 +1,8 @@
 main {
     overflow-y: auto;
     overflow-x: hidden;
-    height: 100vh;
-    width: 100vw;
+    position: absolute;
+    inset: 0px;
     scroll-behavior: smooth;
     
     center {

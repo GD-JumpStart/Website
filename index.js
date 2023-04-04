@@ -9,7 +9,7 @@ app.get('/login', (req, res) => res.status(200).sendFile(__dirname + '/html/logi
 
 app.use('/assets', express.static(__dirname + '/assets/'))
 
-app.get('/discord', (req, res) => res.status(302).redirect('jumpstart://discord?code=' + req.query.code))
+app.get('/discord', (req, res) => res.status(301).redirect('jumpstart://discord?code=' + req.query.code))
 
 app.get('*', (req, res) => {
     res.status(404).sendFile(__dirname + '/html/404.html');
