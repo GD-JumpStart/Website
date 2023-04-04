@@ -40,36 +40,37 @@
     <nav style="transform: translateX(-5px); opacity: 0; display: none; transition: 100ms ease-out"><a href="/premium" class="premium">Jump+</a>•<a href="/store">Store</a>•<a href="/login">Log In</a></nav>
     <main>
         <center style="height: 100%; flex-direction: column;">
-            <img id="icon" src="/assets/img/icon.svg" width="100" height="100" style="transform: translateY(60px); opacity: 0; transition: 400ms ease-out" alt="JumpStartLogo">
-            <loading id="load" style="position: absolute; bottom: calc(50% - 90px); opacity: 0"></loading>
+            <img id="icon" src="/assets/img/icon.svg" width="100" height="100" style="transform: translateY(40px); opacity: 0; transition: 400ms ease-out" alt="JumpStartLogo">
+            <loading id="load" style="position: absolute; top: calc(50% + 5px); opacity: 0"></loading>
             <h2 style="margin: 10px 0px; transform: translateY(10px); opacity: 0; transition: 200ms ease-out">Welcome to JumpStart.</h2>
             <p style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out">All your tools for Geometry Dash, all in one spot.</p>
-            <div style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out" id="actions"><button class="style">Download</button><button class="style">Learn More</button></p>
+            <div style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out" id="actions"><a class="button">Download</a><a class="button">Learn More</a></div>
+            <div style="transform: translateY(10px); opacity: 0; transition: 200ms ease-out" id="disclaimer">Space Waster</div>
         </center>
     </main>
     <div id="content" style="display: none">
         <span>
+            <img src="/assets/img/home-1.png">
             <div>
                 <h1>Easy Mod Managing</h1>
-                <p>Manage and Install multiple mods without opening a single File Explorer window. Lets you download mods for the game and megahack with a single click, and always makes sure your mods are up to date.</p>
+                <p>Manage and Install multiple mods without opening a single File Explorer window. Download mods for GD and MegaHack with a single click, and always makes sure your mods are up to date.</p>
             </div>
-            <img src="/assets/img/home-1.png">
         </span>
-        <span>
+        <span class="reverse">
             <img src="/assets/img/home-2.png">
             <div>
                 <h1>Conventient Texture Pack System</h1>
-                <p>Install, view, and change Texture Packs with ease. No more managing endless .zip files, replacing textures, and Verifying Integrity of Game Files every time your textures break.</p>
+                <p>Install, view, and change Texture Packs with ease. No more managing endless .zip files, replacing textures, and Verifying your Game File's Integrity every time your textures break.</p>
             </div>
         </span>
         <span>
+            <img src="/assets/img/home-3.png">
             <div>
                 <h1>Secure File Backups</h1>
-                <p>Backup your Save Files and make sure you Never lose your data. No more pesky long wait-times and data loss, and no file size limit when saving.<font class="disclaimer main">*</font></p>
+                <p>Backup your saves and make sure you never lose your data again. No more pesky long wait times and data loss, and no file size limit when saving.<font class="disclaimer main">*</font></p>
                 <br>
-                <font class="disclaimer">*Base Users have a maximum of 25MB of storage, while <a href="/premium" class="premium">Jump+</a> Users have unlimited storage.</font>
+                <font class="disclaimer">*Base Users have a maximum of 25MB of storage, while <a href="/premium" class="premium">Jump+</a> Users have up to 100MB.</font>
             </div>
-            <img src="/assets/img/home-3.png">
         </span>
     </div>
 </body>

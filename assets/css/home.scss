@@ -1,10 +1,37 @@
+@media screen and (max-width: 650px) {
+    body {
+        #actions {
+            flex-direction: column;
+
+            a {
+                width: calc(100vw - 50px);
+                margin: 5px 0px;
+            }
+        }
+
+        #content span, #content span.reverse {
+            flex-direction: column;
+
+            img,
+            div {
+                max-width: 100%;
+                margin: 10px 0px;
+            }
+
+            h1 {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
 main {
     overflow-y: auto;
     overflow-x: hidden;
     position: absolute;
     inset: 0px;
     scroll-behavior: smooth;
-    
+
     center {
         display: flex;
         justify-content: center;
@@ -41,11 +68,15 @@ main {
     justify-content: stretch;
     align-items: stretch;
 
-    button {
+    a {
         width: 200px;
         margin: 0px 5px;
-
     }
+}
+
+#disclaimer {
+    font-size: x-small;
+    color: #6c757d;
 }
 
 #content {
@@ -55,6 +86,7 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+    margin-top: 100vh;
 
     span {
         padding: 20px 20px;
@@ -62,8 +94,13 @@ main {
         justify-content: space-between;
         align-items: center;
         border-bottom: solid 1px #343a40;
-        
-        img, div {
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+
+        img,
+        div {
             max-width: 45%;
             margin: 0px 20px;
         }

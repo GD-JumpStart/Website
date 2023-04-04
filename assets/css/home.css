@@ -1,8 +1,29 @@
+@media screen and (max-width: 650px) {
+  body #actions {
+    flex-direction: column;
+  }
+  body #actions a {
+    width: calc(100vw - 50px);
+    margin: 5px 0px;
+  }
+  body #content span, body #content span.reverse {
+    flex-direction: column;
+  }
+  body #content span img,
+  body #content span div, body #content span.reverse img,
+  body #content span.reverse div {
+    max-width: 100%;
+    margin: 10px 0px;
+  }
+  body #content span h1, body #content span.reverse h1 {
+    margin-bottom: 5px;
+  }
+}
 main {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 100vh;
-  width: 100vw;
+  position: absolute;
+  inset: 0px;
   scroll-behavior: smooth;
 }
 main center {
@@ -35,9 +56,14 @@ main * {
   justify-content: stretch;
   align-items: stretch;
 }
-#actions button {
+#actions a {
   width: 200px;
   margin: 0px 5px;
+}
+
+#disclaimer {
+  font-size: x-small;
+  color: #6c757d;
 }
 
 #content {
@@ -47,6 +73,7 @@ main * {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+  margin-top: 100vh;
 }
 #content span {
   padding: 20px 20px;
@@ -55,7 +82,11 @@ main * {
   align-items: center;
   border-bottom: solid 1px #343a40;
 }
-#content span img, #content span div {
+#content span.reverse {
+  flex-direction: row-reverse;
+}
+#content span img,
+#content span div {
   max-width: 45%;
   margin: 0px 20px;
 }

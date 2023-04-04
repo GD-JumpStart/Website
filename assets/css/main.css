@@ -30,18 +30,8 @@ loading {
   border: 3px solid #212529;
   border-top: 3px solid #343a40;
   border-radius: 50%;
-  -webkit-animation: 2s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) spinner;
-          animation: 2s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) spinner;
+  animation: 2s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) spinner;
   transition: opacity 200ms ease-in-out;
-}
-
-@-webkit-keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes spinner {
@@ -193,7 +183,7 @@ context button:hover#del {
   background: #dc3545;
 }
 
-button.style, label.button {
+button.style, label.button, a.button {
   border: 1px solid #495057;
   border-radius: 8px;
   background: #343a40;
@@ -207,23 +197,26 @@ button.style, label.button {
   justify-content: center;
   align-items: center;
 }
-button.style.blue, label.button.blue {
+button.style.blue, label.button.blue, a.button.blue {
   background: #0d6efd;
 }
-button.style.red, label.button.red {
+button.style.red, label.button.red, a.button.red {
   background: #dc3545;
 }
-button.style.disabled, label.button.disabled {
+button.style.disabled, label.button.disabled, a.button.disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-button.style:hover:not(.disabled), label.button:hover:not(.disabled) {
+button.style:hover, label.button:hover, a.button:hover {
+  text-decoration: none;
+}
+button.style:hover:not(.disabled), label.button:hover:not(.disabled), a.button:hover:not(.disabled) {
   background: #495057;
 }
-button.style:hover:not(.disabled).blue, label.button:hover:not(.disabled).blue {
+button.style:hover:not(.disabled).blue, label.button:hover:not(.disabled).blue, a.button:hover:not(.disabled).blue {
   background: #024dbc;
 }
-button.style:hover:not(.disabled).red, label.button:hover:not(.disabled).red {
+button.style:hover:not(.disabled).red, label.button:hover:not(.disabled).red, a.button:hover:not(.disabled).red {
   background: #bd2130;
 }
 

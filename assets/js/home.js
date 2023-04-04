@@ -10,19 +10,41 @@ window.addEventListener('load', async () => {
     await new Promise(async resolve => {
         document.getElementById('load').style.opacity = '1'
         await wait(300)
-        if (navigator.appVersion.toLowerCase().indexOf('mac') != -1) document.querySelectorAll('center div button')[0].innerText = 'Download for MacOS'
-        else if (navigator.appVersion.toLowerCase().indexOf('win') != -1) document.querySelectorAll('center div button')[0].innerText = 'Download for Windows'
-        else document.querySelectorAll('center div button')[0].innerHTML = 'Download for Windows <span class="popup"><i class="bi bi-exclamation-circle"></i><p class="content">OS not currently supported</p></span>'
+        let suffix
+        let dl
+        switch (navigator.userAgent) {
+            case /windows/i.test(navigator.userAgent):
+                suffix = 'win'
+                dl = 'JumpStart_Setup.exe'
+                document.querySelectorAll('center div a')[0].innerText = 'Download for Windows'
+                break
+            case /mac/i.test(navigator.userAgent):
+                suffix = 'mac'
+                dl = 'JumpStart.zip'
+                document.querySelectorAll('center div a')[0].innerText = 'Download for MacOS'
+                break
+            default:
+                suffix = 'win'
+                dl = 'JumpStart_Setup.exe'
+                document.querySelectorAll('center div a')[0].innerText = 'Download for Windows'
+
+                let os = 'your OS'
+                if (/linux/i.test(navigator.userAgent)) os = 'Linux'
+                if (/iphone|ipad|ipod/i.test(navigator.userAgent)) os = 'iOS'
+                if (/android/i.test(navigator.userAgent)) os = 'Android'
+                document.querySelector('center #disclaimer').innerText = `Sorry, ${os} is not currently officially supported.`
+                break
+        }
         await new Promise(resolve => {
             fetch('https://api.github.com/repos/GD-JumpStart/Application/releases', {
                 headers: {
                     'User-Agent': navigator.userAgent
                 }
             }).then(res => { return res.json() }).then(res => {
-                    let suffix = navigator.appVersion.toLowerCase().indexOf('mac') != -1 ? 'mac' : 'win'
                 for (let i = 0; i < res.length; i++) {
+                        console.log(res[i].tag_name, `-${suffix}`)
                     if (res[i].tag_name.toLowerCase().endsWith(`-${suffix}`)) {
-                        download = `https://github.com/GD-JumpStart/Application/releases/download/${res[i].tag_name}/${suffix == 'mac' ? 'JumpStart.zip' : 'JumpStart_Setup.exe'}`
+                        download = `https://github.com/GD-JumpStart/Application/releases/download/${res[i].tag_name}/${dl}`
                         break
                     }
                 }
@@ -46,13 +68,19 @@ window.addEventListener('load', async () => {
     await wait(100)
     document.querySelector('center p').style.transform = 'translateY(0px)'
     document.querySelector('center p').style.opacity = '1'
-    document.querySelectorAll('center div button')[0].onclick = () => location.href = download
-    document.querySelectorAll('center div button')[1].onclick = () => location.href = `https://github.com/GD-JumpStart/`
+    document.querySelectorAll('center div a')[0].href = download
+    document.querySelectorAll('center div a')[1].href = `https://github.com/GD-JumpStart/`
     await wait(100)
     document.querySelector('center div').style.transform = 'translateY(0px)'
     document.querySelector('center div').style.opacity = '1'
     document.querySelector('nav').style.display = ''
     await wait(100)
+    document.querySelector('center #disclaimer').style.transform = 'translateY(0px)'
+    if (document.querySelector('center #disclaimer').innerText != 'Space Waster') document.querySelector('center #disclaimer').style.opacity = '1'
+    else {
+        document.querySelector('center #disclaimer').style.pointerEvents = 'none'
+        document.querySelector('center #disclaimer').style.userSelect = 'none'
+    }
     document.querySelector('nav').style.transform = 'translateX(0px)'
     document.querySelector('nav').style.opacity = '1'
 })

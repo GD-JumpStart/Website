@@ -197,7 +197,7 @@ context {
     }
 }
 
-button.style, label.button {
+button.style, label.button, a.button {
     border: 1px solid #495057;
     border-radius: 8px;
     background: #343a40;
@@ -224,15 +224,19 @@ button.style, label.button {
         cursor: not-allowed;
     }
 
-    &:hover:not(.disabled) {
-        background: #495057;
+    &:hover {
+        text-decoration: none;
 
-        &.blue {
-            background: #024dbc;
-        }
-
-        &.red {
-            background: #bd2130;
+        &:not(.disabled) {
+            background: #495057;
+    
+            &.blue {
+                background: #024dbc;
+            }
+    
+            &.red {
+                background: #bd2130;
+            }
         }
     }
 }

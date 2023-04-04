@@ -20,7 +20,7 @@ window.addEventListener('load', async () => {
         await new Promise(async resolve => {
             await new Promise(async resolve => {
                 if (cookies.get('uid')) {
-                    fetch('https://api.gdjumpstart.org/auth', {
+                    fetch('https://storage.kontroll.dev/jumpstart/auth', {
                         method: 'POST',
                         headers: {
                             'ID': cookies.get('uid')
@@ -34,7 +34,7 @@ window.addEventListener('load', async () => {
             })
 
             if (!query.get('code')) return resolve()
-            fetch('https://api.gdjumpstart.org/auth', {
+            fetch('https://storage.kontroll.dev/jumpstart/auth', {
                 method: 'POST',
                 headers: {
                     'Code': query.get('code'),
