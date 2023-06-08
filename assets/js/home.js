@@ -10,30 +10,24 @@ window.addEventListener('load', async () => {
     await new Promise(async resolve => {
         document.getElementById('load').style.opacity = '1'
         await wait(300)
-        let suffix
-        let dl
-        switch (navigator.userAgent) {
-            case /windows/i.test(navigator.userAgent):
-                suffix = 'win'
-                dl = 'JumpStart_Setup.exe'
-                document.querySelectorAll('center div a')[0].innerText = 'Download for Windows'
-                break
-            case /mac/i.test(navigator.userAgent):
-                suffix = 'mac'
-                dl = 'JumpStart.zip'
-                document.querySelectorAll('center div a')[0].innerText = 'Download for MacOS'
-                break
-            default:
-                suffix = 'win'
-                dl = 'JumpStart_Setup.exe'
-                document.querySelectorAll('center div a')[0].innerText = 'Download for Windows'
+        if (/windows/i.test(navigator.userAgent)) {
+            var suffix = 'win'
+            var dl = 'JumpStart_Setup.exe'
+            document.querySelectorAll('center div a')[0].innerText = 'Download for Windows'
+        } else if (/mac/i.test(navigator.userAgent)) {
+            var suffix = 'mac'
+            var dl = 'JumpStart.zip'
+            document.querySelectorAll('center div a')[0].innerText = 'Download for MacOS'
+        } else {
+            var suffix = 'win'
+            var dl = 'JumpStart_Setup.exe'
+            document.querySelectorAll('center div a')[0].innerText = 'Download for Windows'
 
-                let os = 'your OS'
-                if (/linux/i.test(navigator.userAgent)) os = 'Linux'
-                if (/iphone|ipad|ipod/i.test(navigator.userAgent)) os = 'iOS'
-                if (/android/i.test(navigator.userAgent)) os = 'Android'
-                document.querySelector('center #disclaimer').innerText = `Sorry, ${os} is not currently officially supported.`
-                break
+            let os = 'your OS'
+            if (/linux/i.test(navigator.userAgent)) os = 'Linux'
+            if (/iphone|ipad|ipod/i.test(navigator.userAgent)) os = 'iOS'
+            if (/android/i.test(navigator.userAgent)) os = 'Android'
+            document.querySelector('center #disclaimer').innerText = `Sorry, ${os} is not currently officially supported.`
         }
         await new Promise(resolve => {
             fetch('https://api.github.com/repos/GD-JumpStart/Application/releases', {
